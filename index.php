@@ -10,11 +10,27 @@ Scriviamo tutto (logica e layout) in un unico file index.php
 Milestone 2
 Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
 */
-$passwordLenght = $_GET('passwordLenght');
-echo $passwordLenght;
 
-$passwordGenerator;
+/* Milestone 1
+Creare un form che invii in GET la lunghezza della password.*/
+$passwordLength = $_GET['passwordLength'];
+var_dump($passwordLength);
+//Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente. 
 
+
+passwordGenerator($passwordLength);
+
+function passwordGenerator($userInput) {
+$comb = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+$password = "";
+
+for ($i = 0; $i < $userInput ; $i++){
+$password .=  $comb[rand( 0 , strlen($comb) - 1)];
+}
+return $password;
+}
+
+echo passwordGenerator($passwordLength);
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +43,7 @@ $passwordGenerator;
 </head>
 <body>
     <form action="" method="get">
-    <input type="text">
+    <input type="text" name="passwordLength">
     <h1></h1>
     </form>
 </body>
