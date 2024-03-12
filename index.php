@@ -11,26 +11,26 @@ Milestone 2
 Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
 */
 
-/* Milestone 1
-Creare un form che invii in GET la lunghezza della password.*/
-$passwordLength = $_GET['passwordLength'];
-var_dump($passwordLength);
-//Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente. 
 
 
-passwordGenerator($passwordLength);
 
-function passwordGenerator($userInput) {
-$comb = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-$password = "";
-
-for ($i = 0; $i < $userInput ; $i++){
-$password .=  $comb[rand( 0 , strlen($comb) - 1)];
-}
-return $password;
-}
-
-echo passwordGenerator($passwordLength);
+/*Milestone 2
+Verificato il corretto funzionamento del nostro codice, 
+spostiamo la logica in un file functions.php 
+che includeremo poi nella pagina principale*/
+include './functions.php';
+/*
+Milestone 3 (BONUS)
+Invece di visualizzare la password nella index, 
+effettuare un redirect ad una pagina dedicata che 
+tramite $_SESSION recupererà la password da mostrare 
+all’utente.
+Milestone 4 (BONUS)
+Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. 
+Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro 
+(es. numeri e simboli, oppure tutti e tre insieme). 
+Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.*/
+session_start(); 
 ?>
 
 <!DOCTYPE html>
@@ -42,9 +42,10 @@ echo passwordGenerator($passwordLength);
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="get">
+    <form action="passwordView.php" method="get">
     <input type="text" name="passwordLength">
-    <h1></h1>
     </form>
+    <!--<p>Your password is: <?php echo $YourPassword?></p>-->
+    <?php $_SESSION["YourPW"] = $YourPassword?>
 </body>
 </html>
