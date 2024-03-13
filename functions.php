@@ -1,4 +1,5 @@
 <?php
+session_start();
 /* Milestone 1
 Creare un form che invii in GET la lunghezza della password.*/
 $passwordLength = $_GET['passwordLength'];
@@ -20,3 +21,5 @@ return $password;
 
 echo passwordGenerator($passwordLength);
 $YourPassword= passwordGenerator($passwordLength);
+$_SESSION["YourPW"] = $YourPassword;
+header('Location: ./passwordView.php');

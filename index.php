@@ -18,7 +18,7 @@ Verificato il corretto funzionamento del nostro codice, spostiamo la logica in u
 Verificato il corretto funzionamento del nostro codice, 
 spostiamo la logica in un file functions.php 
 che includeremo poi nella pagina principale*/
-include './functions.php';
+
 /*
 Milestone 3 (BONUS)
 Invece di visualizzare la password nella index, 
@@ -30,7 +30,9 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro 
 (es. numeri e simboli, oppure tutti e tre insieme). 
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.*/
-session_start(); 
+ 
+include './functions.php';
+header('Location: ./passwordView');
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +48,6 @@ session_start();
     <input type="text" name="passwordLength">
     </form>
     <!--<p>Your password is: <?php echo $YourPassword?></p>-->
-    <?php $_SESSION["YourPW"] = $YourPassword?>
+    
 </body>
 </html>
