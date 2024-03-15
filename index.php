@@ -31,8 +31,8 @@ Possono essere scelti singolarmente (es. solo numeri) oppure possono essere comb
 (es. numeri e simboli, oppure tutti e tre insieme). 
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.*/
  
-include './functions.php';
-header('Location: ./passwordView');
+//include './functions.php';
+//header('Location: ./passwordView');
 ?>
 
 <!DOCTYPE html>
@@ -44,10 +44,30 @@ header('Location: ./passwordView');
     <title>Document</title>
 </head>
 <body>
-    <form action="passwordView.php" method="get">
-    <input type="text" name="passwordLength">
+    <form action="functions.php" method="get">
+        <input type="text" name="passwordLength">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="minuscole" id="flexRadioDefault1" value="minuscole">
+            <label class="form-check-label" for="flexRadioDefault1" >
+                Solo lettere maiuscole
+            </label>            
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="maiuscole" id="flexRadioDefault1" value="maiuscole">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Solo lettere minuscole
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="numeri" id="flexRadioDefault1" value="numeri">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Solo numeri
+            </label>
+        </div>
+        <button type="submit">Invia</button>
     </form>
-    <!--<p>Your password is: <?php echo $YourPassword?></p>-->
+
+  
     
 </body>
 </html>
