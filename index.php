@@ -47,22 +47,28 @@ Dare all’utente anche la possibilità di permettere o meno la ripetizione di c
     <form action="functions.php" method="get">
         <input type="text" name="passwordLength">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="minuscole" id="flexRadioDefault1" value="minuscole">
+            <input class="form-check-input" type="radio" name="checkbox" id="flexRadioDefault1" value="minuscole">
             <label class="form-check-label" for="flexRadioDefault1" >
-                Solo lettere maiuscole
+                Solo lettere minuscole
             </label>            
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="maiuscole" id="flexRadioDefault1" value="maiuscole">
+            <input class="form-check-input" type="radio" name="checkbox" id="flexRadioDefault1" value="maiuscole">
             <label class="form-check-label" for="flexRadioDefault1">
-                Solo lettere minuscole
+                Solo lettere maiuscole
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="numeri" id="flexRadioDefault1" value="numeri">
+            <input class="form-check-input" type="radio" name="checkbox" id="flexRadioDefault1" value="numeri">
             <label class="form-check-label" for="flexRadioDefault1">
                 Solo numeri
             </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="repeatCheckbox" id="flexRadioDefault1" value="checked">
+            <label class="form-check-label" for="flexRadioDefault1" >
+                Tutte cifre diverse
+            </label>            
         </div>
         <button type="submit">Invia</button>
     </form>
